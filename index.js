@@ -9,6 +9,11 @@ const sequelize = new Sequelize('restauran', 'postgres', 'postgres', {
     dialect: 'postgres',
 
   });
+  sequelize.authenticate().then(() => {
+    console.log("Success!");
+  }).catch((err) => {
+    console.log(err);
+  });
 
 const Image = ImageModel(sequelize, Sequelize);
 const Dish = DishModel(sequelize, Sequelize);
