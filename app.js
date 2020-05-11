@@ -93,4 +93,4 @@ module.exports.Image = Image;
 module.exports.Dish = Dish;
 module.exports.Review = Review;
 module.exports.Subscriber = Subscriber;
-app.listen(5000);
+app.listen(process.env.PORT || 3000);
