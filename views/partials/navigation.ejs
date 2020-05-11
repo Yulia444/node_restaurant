@@ -1,0 +1,15 @@
+<header>
+    <div class="header">
+        <a href="/"><img src="/views/img/divani-palace-acropolis-secret-restaurant-logo.png" id="logo"></a>
+        <ul>
+    
+            <% for(const nav in navies) { %>
+            <% if('/'+ navies[nav] == page) {%>
+            <li><a href="/<%=navies[nav] %>" id="active_nav"><%=(navies[nav][0].toUpperCase() + navies[nav].slice(1)) %></a></li>
+            <% } else { %>
+            <li><a href="/<%=navies[nav] %>"><%=(navies[nav][0].toUpperCase() + navies[nav].slice(1)) %></a></li>
+            <% } %>
+            <% }%>
+        </ul>
+    </div>
+</header>

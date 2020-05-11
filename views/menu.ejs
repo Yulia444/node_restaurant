@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/views/css/style.css" type="text/css">
+    </head>
+    <body>
+        <%- include("partials/navigation.ejs") %>
+
+        <div class='dish_nav'>
+            <ul>
+                <% for(var c in categories) { %>
+                    <% if (page.includes(categories[c].DISTINCT)) { %>
+                <li><a href="/menu/<%=categories[c].DISTINCT %>" id='active'><%=categories[c].DISTINCT %></a></li>
+                    <% } else { %>
+                <li><a href="/menu/<%=categories[c].DISTINCT %>"><%=categories[c].DISTINCT %></a></li>
+                    <% } %>
+                <% } %>
+            </ul>
+            <hr style='margin-top: 30px;'>
+        </div>
+        
+        
+        <div class='menu'>
+            <% for(var d in dishes) { %>
+            <figure style='width: 350px;'>
+                <img src="/views/img/<%= dishes[d].picture %>" style='width: 350px; height: 350px;'>
+                <figcaption><%= dishes[d].description %> <br><br> <%= dishes[d].price %>€</figcaption>
+            </figure>
+            <% } %>
+        </div>
+        
+      
+    </body>
+</html>

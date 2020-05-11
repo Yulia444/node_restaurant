@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/views/css/style.css" type="text/css">
+        <link rel="stylesheet" href="/views/css/review_form_style.css" type="text/css">
+        <script src="/views/js/script.js"></script>
+    </head>
+    <body>
+        <%- include("partials/navigation.ejs") %>
+
+        <p style="margin-top: 50px;">
+            <span id='all_reviews'>All reviews</span><span id='write_review' class='open-btn' onclick="openForm()">write review</span>
+        </p>
+        <div class="reviews">
+            <% if (reviews) { %>
+                <% for(r in reviews) { %>
+                <div class="review">
+                    <p><pre><span id="person"><%=reviews[r].author %></span>   <span id="about"><%= reviews[r].title %></span><span id="date"><%= reviews[r].date %></span></pre></p>
+                    <p id="details"><%= reviews[r].review %></p>
+
+                </div>
+                <% } %>
+            <% } %>
+        </div>
+        <%- include("partials/popUpForm.ejs") %>
+       
+    </body>
+</html>

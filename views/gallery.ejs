@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/views/css/style.css" type="text/css">
+    </head>
+    <body>
+        <%- include("partials/navigation.ejs") %>
+
+        <div class='gallery'>
+            <% for(const image in images) { %>
+            <img src="/views/img/<%=images[image].link %>" style="width: 380px; height: 360px;">
+            <% } %>
+        </div>
+
+        <%- include("partials/footer.ejs") %>
+    </body>
+</html>
