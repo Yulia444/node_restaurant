@@ -4,7 +4,8 @@ var urlencodedParser = bodyParser.urlencoded({extended: false});
 var app = express();
 app.set('view engine', 'ejs');
 app.use('/views', express.static('views'))
-
+const pg = require('pg');
+pg.defaults.ssl = true;
 const {Image, Dish, Review, Subscriber} = require('./index');
 
 var navies = ['gallery', 'menu', 'news', 'reviews'];
